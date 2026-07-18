@@ -11,9 +11,9 @@
 module.exports = {
   apps: [
     {
-      name: "IPU-ipuniversity",
+      name: "IPU-ggsipu",
       script: "node_modules/next/dist/bin/next",
-      args: "start -p 3009",
+      args: "start -p 3010",
       cwd: __dirname,
       instances: 1, // bump to "max" for cluster mode once traffic justifies it
       exec_mode: "fork",
