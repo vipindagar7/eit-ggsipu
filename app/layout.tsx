@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
 <meta name="google-site-verification" content="BAx_pBkXfFDeGRU6sxbml_bjbEYySjYvmrP37N6JY6M" />
       </head>
-      <body className="font-body bg-paper text-ink antialiased transition-colors dark:bg-indigo-950 dark:text-slate-100">
+      <body className="font-body bg-paper text-ink antialiased transition-colors ">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded-md focus:bg-indigo-700 focus:px-4 focus:py-2 focus:text-white"

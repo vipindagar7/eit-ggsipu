@@ -30,8 +30,8 @@ export default async function BlogListPage({
 
   return (
     <div className="container py-12">
-      <h1 className="font-display text-3xl font-semibold text-indigo-900 dark:text-white">Blog</h1>
-      <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+      <h1 className="font-display text-3xl font-semibold text-indigo-900">Blog</h1>
+      <p className="mt-2 max-w-2xl text-slate-600 ">
         Guidance on admissions, careers, and campus life, written by our counselling team.
       </p>
 
@@ -42,7 +42,7 @@ export default async function BlogListPage({
             "rounded-full border px-3 py-1.5 text-sm",
             !category
               ? "border-indigo-700 bg-indigo-700 text-white"
-              : "border-slate-200 text-slate-600 hover:border-indigo-400 dark:border-white/10 dark:text-slate-300"
+              : "border-slate-200 text-slate-600 hover:border-indigo-400"
           )}
         >
           All
@@ -55,7 +55,7 @@ export default async function BlogListPage({
               "rounded-full border px-3 py-1.5 text-sm",
               category === c
                 ? "border-indigo-700 bg-indigo-700 text-white"
-                : "border-slate-200 text-slate-600 hover:border-indigo-400 dark:border-white/10 dark:text-slate-300"
+                : "border-slate-200 text-slate-600 hover:border-indigo-400 "
             )}
           >
             {c}
@@ -67,7 +67,7 @@ export default async function BlogListPage({
         {blogs.map((blog: any) => (
           <BlogCard key={blog._id} blog={blog} />
         ))}
-        {blogs.length === 0 && <p className="text-slate-500 dark:text-slate-400">No articles published yet.</p>}
+        {blogs.length === 0 && <p className="text-slate-500">No articles published yet.</p>}
       </div>
     </div>
   );

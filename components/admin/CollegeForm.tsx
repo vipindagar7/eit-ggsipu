@@ -148,7 +148,7 @@ export function CollegeForm({ initial }: { initial?: Partial<CollegeFormValues> 
                 className={`rounded-full border px-3 py-1.5 text-xs ${
                   active
                     ? "border-indigo-700 bg-indigo-700 text-white"
-                    : "border-slate-200 text-slate-600 dark:border-white/10 dark:text-slate-300"
+                    : "border-slate-200 text-slate-600 "
                 }`}
               >
                 {c.label}
@@ -175,7 +175,7 @@ export function CollegeForm({ initial }: { initial?: Partial<CollegeFormValues> 
       <div className="grid gap-6 sm:grid-cols-3">
         <div>
           <Label>Logo (light theme)</Label>
-          <p className="mb-1 text-xs text-slate-400 dark:text-slate-500">
+          <p className="mb-1 text-xs text-slate-400 ">
             Shown when the site is in light mode — usually a logo with dark text/marks.
           </p>
           <div className="mt-2">
@@ -190,7 +190,7 @@ export function CollegeForm({ initial }: { initial?: Partial<CollegeFormValues> 
 
         <div>
           <Label>Logo (dark theme)</Label>
-          <p className="mb-1 text-xs text-slate-400 dark:text-slate-500">
+          <p className="mb-1 text-xs text-slate-400 ">
             Shown when the site is in dark mode — usually a logo with light/white text or marks.
             Falls back to the light-theme logo if left empty.
           </p>
@@ -233,7 +233,7 @@ export function CollegeForm({ initial }: { initial?: Partial<CollegeFormValues> 
       </div>
 
       <div className="flex gap-6">
-        <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+        <label className="flex items-center gap-2 text-sm text-slate-700 ">
           <input
             type="checkbox"
             checked={values.isFeatured}
@@ -241,7 +241,7 @@ export function CollegeForm({ initial }: { initial?: Partial<CollegeFormValues> 
           />
           Featured
         </label>
-        <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+        <label className="flex items-center gap-2 text-sm text-slate-700 ">
           <input
             type="checkbox"
             checked={values.isPublished}

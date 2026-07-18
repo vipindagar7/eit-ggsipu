@@ -108,7 +108,7 @@ export function BlogForm({ initial }: { initial?: Partial<BlogFormValues> }) {
       <div>
         <Label>Category</Label>
         <select
-          className="flex h-10 w-full max-w-xs rounded-md border border-slate-200 bg-white px-3 text-sm dark:border-white/10 dark:bg-indigo-900/40 dark:text-white"
+          className="flex h-10 w-full max-w-xs rounded-md border border-slate-200 bg-white px-3 text-sm"
           value={values.category}
           onChange={(e) => update("category", e.target.value)}
         >

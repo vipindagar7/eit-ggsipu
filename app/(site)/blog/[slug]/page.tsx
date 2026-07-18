@@ -81,13 +81,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             </div>
           </div>
         ) : (
-          <div className="border-b border-slate-200 bg-indigo-50 dark:border-white/10 dark:bg-indigo-900/30">
+          <div className="border-b border-slate-200 bg-indigo-50">
             <div className="container max-w-3xl py-14">
               <Breadcrumb category={blog.category} />
-              <span className="mt-4 inline-block rounded-full bg-brass-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brass-600 dark:bg-brass-400/10 dark:text-brass-300">
+              <span className="mt-4 inline-block rounded-full bg-brass-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brass-600 ">
                 {blog.category}
               </span>
-              <h1 className="mt-3 font-display text-3xl font-semibold leading-tight text-indigo-900 dark:text-white md:text-5xl">
+              <h1 className="mt-3 font-display text-3xl font-semibold leading-tight text-indigo-900  md:text-5xl">
                 {blog.title}
               </h1>
             </div>
@@ -97,14 +97,14 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
       <div className="container max-w-3xl py-10">
         {/* Byline row */}
-        <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-6 dark:border-white/10">
+        <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-6 ">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-sm font-semibold text-white">
               {initials(blog.author)}
             </div>
             <div>
-              <p className="text-sm font-medium text-indigo-900 dark:text-white">{blog.author}</p>
-              <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-sm font-medium text-indigo-900 ">{blog.author}</p>
+              <div className="flex items-center gap-2 text-xs text-slate-500 ">
                 {blog.publishedAt && <span>{formatDate(blog.publishedAt)}</span>}
                 <span aria-hidden>·</span>
                 <span className="flex items-center gap-1">
@@ -131,14 +131,14 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           <div className="min-w-0">
             {/* Mobile-only collapsible TOC */}
             {headings.length > 0 && (
-              <details className="mb-6 rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-indigo-900/30 lg:hidden">
-                <summary className="cursor-pointer text-sm font-medium text-indigo-900 dark:text-white">
+              <details className="mb-6 rounded-lg border border-slate-200 bg-white p-4 lg:hidden">
+                <summary className="cursor-pointer text-sm font-medium text-indigo-900 ">
                   On this page
                 </summary>
                 <ul className="mt-3 space-y-1.5">
                   {headings.map((h) => (
                     <li key={h.id} className={h.level === 3 ? "pl-3" : undefined}>
-                      <a href={`#${h.id}`} className="text-sm text-slate-600 hover:text-indigo-700 dark:text-slate-300 dark:hover:text-white">
+                      <a href={`#${h.id}`} className="text-sm text-slate-600 hover:text-indigo-700">
                         {h.text}
                       </a>
                     </li>
@@ -150,12 +150,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             <ArticleContent html={html} />
 
             {blog.tags?.length > 0 && (
-              <div className="mt-10 flex flex-wrap gap-2 border-t border-slate-200 pt-6 dark:border-white/10">
+              <div className="mt-10 flex flex-wrap gap-2 border-t border-slate-200 pt-6">
                 {blog.tags.map((t: string) => (
                   <Link
                     key={t}
                     href={`/blog?category=${encodeURIComponent(blog.category)}`}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600 transition-colors hover:bg-indigo-50 hover:text-indigo-700 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+                    className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600 transition-colors hover:bg-indigo-50 hover:text-indigo-700"
                   >
                     #{t}
                   </Link>
@@ -188,8 +188,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 }
 
 function Breadcrumb({ category, light }: { category: string; light?: boolean }) {
-  const base = light ? "text-slate-200" : "text-slate-500 dark:text-slate-400";
-  const hover = light ? "hover:text-white" : "hover:text-indigo-700 dark:hover:text-white";
+  const base = light ? "text-slate-200" : "text-slate-500 ";
+  const hover = light ? "hover:text-white" : "hover:text-indigo-700 ";
   return (
     <nav className={`flex items-center gap-1.5 text-xs ${base}`} aria-label="Breadcrumb">
       <Link href="/" className={hover}>
@@ -200,7 +200,7 @@ function Breadcrumb({ category, light }: { category: string; light?: boolean }) 
         Blog
       </Link>
       <ChevronRight size={12} />
-      <span className={light ? "text-white" : "text-indigo-900 dark:text-white"}>{category}</span>
+      <span className={light ? "text-white" : "text-indigo-900"}>{category}</span>
     </nav>
   );
 }

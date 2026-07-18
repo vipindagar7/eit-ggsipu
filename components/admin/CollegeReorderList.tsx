@@ -45,10 +45,10 @@ function SortableRow({ college, index }: { college: College; index: number }) {
     <div
       ref={setNodeRef}
       style={style}
-      className="flex items-center gap-3 rounded-md border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-indigo-900/30"
+      className="flex items-center gap-3 rounded-md border border-slate-200 bg-white p-3 shadow-sm "
     >
       <button
-        className="cursor-grab touch-none text-slate-400 active:cursor-grabbing dark:text-slate-500"
+        className="cursor-grab touch-none text-slate-400 active:cursor-grabbing "
         {...attributes}
         {...listeners}
         aria-label="Drag to reorder"
@@ -56,23 +56,23 @@ function SortableRow({ college, index }: { college: College; index: number }) {
         <GripVertical size={18} />
       </button>
 
-      <span className="w-6 shrink-0 text-sm font-semibold text-slate-400 dark:text-slate-500">#{index + 1}</span>
+      <span className="w-6 shrink-0 text-sm font-semibold text-slate-400 ">#{index + 1}</span>
 
       <div className="min-w-0 flex-1">
-        <p className="truncate font-medium text-indigo-900 dark:text-white">{college.name}</p>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="truncate font-medium text-indigo-900 ">{college.name}</p>
+        <p className="text-xs text-slate-500 ">
           {college.city}, {college.state}
           {!college.isPublished && " · Hidden from public site"}
         </p>
       </div>
 
       {college.rating ? (
-        <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+        <span className="flex items-center gap-1 text-xs text-slate-500 ">
           <Star size={12} className="fill-brass-400 text-brass-400" /> {college.rating.toFixed(1)}
         </span>
       ) : null}
 
-      <Link href={`/admin/colleges/${college._id}`} className="text-slate-400 hover:text-indigo-700 dark:text-slate-500 dark:hover:text-white">
+      <Link href={`/admin/colleges/${college._id}`} className="text-slate-400 hover:text-indigo-700">
         <Pencil size={16} />
       </Link>
     </div>
@@ -110,7 +110,7 @@ export function CollegeReorderList({ initialColleges }: { initialColleges: Colle
   }
 
   if (colleges.length === 0) {
-    return <p className="text-slate-500 dark:text-slate-400">No colleges yet. Add your first one.</p>;
+    return <p className="text-slate-500">No colleges yet. Add your first one.</p>;
   }
 
   return (
@@ -124,7 +124,7 @@ export function CollegeReorderList({ initialColleges }: { initialColleges: Colle
           </div>
         </SortableContext>
       </DndContext>
-      <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
+      <p className="mt-3 text-xs text-slate-400 ">
         {saving ? "Saving order..." : saved ? "Order saved ✓" : "Drag any row to change its rank"}
       </p>
     </div>

@@ -25,18 +25,18 @@ export async function BannerSlot({ placement }: { placement: string }) {
 function BannerCard({ banner }: { banner: any }) {
   const content = (
     <>
-      <div className="relative h-32 w-full overflow-hidden rounded-t-lg bg-indigo-100 dark:bg-indigo-900/50">
+      <div className="relative h-32 w-full overflow-hidden rounded-t-lg bg-indigo-100">
         <Image src={banner.image} alt={banner.title} fill className="object-cover" />
       </div>
       <div className="p-4">
-        <p className="font-display text-base font-semibold text-indigo-900 dark:text-white">
+        <p className="font-display text-base font-semibold text-indigo-900 ">
           {banner.title}
         </p>
         {banner.description && (
-          <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{banner.description}</p>
+          <p className="mt-1 text-sm text-slate-600 ">{banner.description}</p>
         )}
         {banner.linkUrl && (
-          <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brass-600 dark:text-brass-300">
+          <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brass-600 ">
             {banner.linkText || "Learn more"} <ArrowRight size={14} />
           </span>
         )}
@@ -45,7 +45,7 @@ function BannerCard({ banner }: { banner: any }) {
   );
 
   const cardClass =
-    "block overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-indigo-900/30";
+    "block overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ";
 
   if (banner.linkUrl) {
     const isExternal = /^https?:\/\//.test(banner.linkUrl);

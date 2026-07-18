@@ -38,7 +38,7 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
   ];
 
   const buttonClass =
-    "flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-brass-400 hover:text-brass-600 dark:border-white/10 dark:bg-indigo-900/40 dark:text-slate-300 dark:hover:border-brass-400 dark:hover:text-brass-300";
+    "flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:border-brass-400 hover:text-brass-600";
 
   return (
     <div className="flex flex-row gap-2 lg:flex-col">

@@ -73,7 +73,7 @@ export function BannerForm({ initial }: { initial?: Partial<BannerFormValues> })
     <form onSubmit={onSubmit} className="grid max-w-xl gap-4">
       <div>
         <Label>Banner image</Label>
-        <p className="mb-1 text-xs text-slate-400 dark:text-slate-500">
+        <p className="mb-1 text-xs text-slate-400">
           Wide images work best — this isn't cropped to a square.
         </p>
         <div className="mt-2">
@@ -123,7 +123,7 @@ export function BannerForm({ initial }: { initial?: Partial<BannerFormValues> })
         <div>
           <Label>Placement</Label>
           <select
-            className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 text-sm dark:border-white/10 dark:bg-indigo-900/40 dark:text-white"
+            className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 text-sm "
             value={values.placement}
             onChange={(e) => update("placement", e.target.value)}
           >
@@ -141,13 +141,13 @@ export function BannerForm({ initial }: { initial?: Partial<BannerFormValues> })
             value={values.order}
             onChange={(e) => update("order", Number(e.target.value))}
           />
-          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+          <p className="mt-1 text-xs text-slate-400">
             Lower shows first when multiple banners share a placement.
           </p>
         </div>
       </div>
 
-      <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+      <label className="flex items-center gap-2 text-sm text-slate-700 ">
         <input
           type="checkbox"
           checked={values.isActive}

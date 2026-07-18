@@ -48,22 +48,22 @@ export function InlineCounsellingCard({
   }
 
   return (
-    <div className="rounded-xl border border-brass-200 bg-gradient-to-br from-brass-50 to-white p-6 dark:border-white/10 dark:from-indigo-900/60 dark:to-indigo-900/20 sm:p-8">
+    <div className="rounded-xl border border-brass-200 bg-gradient-to-br from-brass-50 to-white p-6 sm:p-8">
       <div className="mb-5 flex items-center gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-white">
           <GraduationCap size={20} />
         </div>
         <div>
-          <p className="font-display text-lg text-indigo-900 dark:text-white">{title}</p>
-          <p className="text-sm text-slate-600 dark:text-slate-300">{subtitle}</p>
+          <p className="font-display text-lg text-indigo-900">{title}</p>
+          <p className="text-sm text-slate-600 ">{subtitle}</p>
         </div>
       </div>
 
       {submitted ? (
-        <div className="flex flex-col items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-6 text-center dark:border-green-900 dark:bg-green-900/20">
-          <CheckCircle2 className="text-green-600 dark:text-green-400" size={32} />
-          <p className="text-sm font-medium text-indigo-900 dark:text-white">Request received!</p>
-          <p className="text-xs text-slate-600 dark:text-slate-300">
+        <div className="flex flex-col items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-6 text-center">
+          <CheckCircle2 className="text-green-600 " size={32} />
+          <p className="text-sm font-medium text-indigo-900 ">Request received!</p>
+          <p className="text-xs text-slate-600 ">
             Check your email — we'll call within 24 hours.
           </p>
         </div>
@@ -83,7 +83,7 @@ export function InlineCounsellingCard({
           </div>
           <div>
             <select
-              className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-indigo-900/40 dark:text-white"
+              className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm"
               {...register("interestedIn")}
               defaultValue=""
             >

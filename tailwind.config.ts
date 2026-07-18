@@ -16,8 +16,6 @@ export default {
       colors: {
         background: "rgb(var(--background) / <alpha-value>)",
         "muted-foreground": "rgb(var(--muted-foreground) / <alpha-value>)",
-        // Academic / institutional palette — deep indigo + warm brass accent.
-        // Chosen deliberately to avoid the generic cream+terracotta / dark+neon defaults.
         ink: "#101828",
         indigo: {
           50: "#EEF1F8",

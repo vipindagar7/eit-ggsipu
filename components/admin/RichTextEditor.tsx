@@ -118,7 +118,7 @@ export function RichTextEditor({
     editorProps: {
       attributes: {
         class:
-          "prose-blog min-h-[220px] rounded-b-md border border-t-0 border-slate-200 bg-white p-4 focus:outline-none dark:border-white/10 dark:bg-indigo-900/20",
+          "prose-blog min-h-[220px] rounded-b-md border border-t-0 border-slate-200 bg-white p-4 focus:outline-none ",
       },
       transformPastedHTML: cleanPastedHtml,
     },
@@ -127,7 +127,7 @@ export function RichTextEditor({
   if (!editor) return null;
 
   const btn = (active: boolean) =>
-    `rounded p-1.5 ${active ? "bg-indigo-700 text-white" : "text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/10"}`;
+    `rounded p-1.5 ${active ? "bg-indigo-700 text-white" : "text-slate-500 hover:bg-slate-100 "}`;
 
   function setLink() {
     const previousUrl = editor!.getAttributes("link").href as string | undefined;
@@ -149,9 +149,9 @@ export function RichTextEditor({
 
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-1 rounded-t-md border border-slate-200 bg-slate-50 p-1.5 dark:border-white/10 dark:bg-white/5">
+      <div className="flex flex-wrap items-center gap-1 rounded-t-md border border-slate-200 bg-slate-50 p-1.5 ">
         <select
-          className="rounded border border-slate-200 bg-white px-2 py-1 text-xs text-slate-600 dark:border-white/10 dark:bg-indigo-900/40 dark:text-slate-300"
+          className="rounded border border-slate-200 bg-white px-2 py-1 text-xs text-slate-600 "
           value={currentHeadingLevel()}
           onChange={(e) => {
             const level = Number(e.target.value);
@@ -167,7 +167,7 @@ export function RichTextEditor({
           ))}
         </select>
 
-        <span className="mx-1 h-5 w-px bg-slate-200 dark:bg-white/10" aria-hidden />
+        <span className="mx-1 h-5 w-px bg-slate-200 " aria-hidden />
 
         <button type="button" className={btn(editor.isActive("bold"))} onClick={() => editor.chain().focus().toggleBold().run()} title="Bold">
           <Bold size={16} />
@@ -179,7 +179,7 @@ export function RichTextEditor({
           <UnderlineIcon size={16} />
         </button>
 
-        <span className="mx-1 h-5 w-px bg-slate-200 dark:bg-white/10" aria-hidden />
+        <span className="mx-1 h-5 w-px bg-slate-200" aria-hidden />
 
         {/* Text color */}
         <div className="relative">
@@ -187,14 +187,14 @@ export function RichTextEditor({
             <Palette size={16} />
           </button>
           {showColorMenu && (
-            <div className="absolute left-0 top-full z-10 mt-1 w-40 rounded-md border border-slate-200 bg-white p-2 shadow-lg dark:border-white/10 dark:bg-indigo-900 dark:shadow-black/40">
+            <div className="absolute left-0 top-full z-10 mt-1 w-40 rounded-md border border-slate-200 bg-white p-2 shadow-lg">
               <div className="grid grid-cols-4 gap-1.5">
                 {TEXT_COLORS.filter((c) => c.value).map((c) => (
                   <button
                     key={c.value}
                     type="button"
                     title={c.label}
-                    className="h-6 w-6 rounded-full border border-slate-200 dark:border-white/20"
+                    className="h-6 w-6 rounded-full border border-slate-200 "
                     style={{ backgroundColor: c.value }}
                     onClick={() => {
                       editor.chain().focus().setColor(c.value).run();
@@ -205,7 +205,7 @@ export function RichTextEditor({
               </div>
               <button
                 type="button"
-                className="mt-2 flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left text-xs text-slate-500 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-white/10"
+                className="mt-2 flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left text-xs text-slate-500 hover:bg-slate-50"
                 onClick={() => {
                   editor.chain().focus().unsetColor().run();
                   setShowColorMenu(false);
@@ -228,14 +228,14 @@ export function RichTextEditor({
             <Highlighter size={16} />
           </button>
           {showHighlightMenu && (
-            <div className="absolute left-0 top-full z-10 mt-1 w-40 rounded-md border border-slate-200 bg-white p-2 shadow-lg dark:border-white/10 dark:bg-indigo-900 dark:shadow-black/40">
+            <div className="absolute left-0 top-full z-10 mt-1 w-40 rounded-md border border-slate-200 bg-white p-2 shadow-lg ">
               <div className="grid grid-cols-4 gap-1.5">
                 {HIGHLIGHT_COLORS.map((c) => (
                   <button
                     key={c.value}
                     type="button"
                     title={c.label}
-                    className="h-6 w-6 rounded-full border border-slate-200 dark:border-white/20"
+                    className="h-6 w-6 rounded-full border border-slate-200 "
                     style={{ backgroundColor: c.value }}
                     onClick={() => {
                       editor.chain().focus().toggleHighlight({ color: c.value }).run();
@@ -246,7 +246,7 @@ export function RichTextEditor({
               </div>
               <button
                 type="button"
-                className="mt-2 flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left text-xs text-slate-500 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-white/10"
+                className="mt-2 flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left text-xs text-slate-500 hover:bg-slate-50 "
                 onClick={() => {
                   editor.chain().focus().unsetHighlight().run();
                   setShowHighlightMenu(false);
@@ -258,7 +258,7 @@ export function RichTextEditor({
           )}
         </div>
 
-        <span className="mx-1 h-5 w-px bg-slate-200 dark:bg-white/10" aria-hidden />
+        <span className="mx-1 h-5 w-px bg-slate-200 " aria-hidden />
 
         <button type="button" className={btn(editor.isActive("bulletList"))} onClick={() => editor.chain().focus().toggleBulletList().run()} title="Bullet list">
           <List size={16} />
@@ -270,7 +270,7 @@ export function RichTextEditor({
           <Quote size={16} />
         </button>
 
-        <span className="mx-1 h-5 w-px bg-slate-200 dark:bg-white/10" aria-hidden />
+        <span className="mx-1 h-5 w-px bg-slate-200 " aria-hidden />
 
         <button type="button" className={btn(editor.isActive("link"))} onClick={setLink} title="Add/edit link">
           <Link2 size={16} />
@@ -281,7 +281,7 @@ export function RichTextEditor({
           </button>
         )}
 
-        <span className="mx-1 h-5 w-px bg-slate-200 dark:bg-white/10" aria-hidden />
+        <span className="mx-1 h-5 w-px bg-slate-200" aria-hidden />
 
         <div className="relative">
           <button
@@ -293,10 +293,10 @@ export function RichTextEditor({
             <TableIcon size={16} />
           </button>
           {showTableMenu && (
-            <div className="absolute left-0 top-full z-10 mt-1 w-52 rounded-md border border-slate-200 bg-white p-1 shadow-lg dark:border-white/10 dark:bg-indigo-900 dark:shadow-black/40">
+            <div className="absolute left-0 top-full z-10 mt-1 w-52 rounded-md border border-slate-200 bg-white p-1 shadow-lg ">
               <button
                 type="button"
-                className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-slate-700 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10"
+                className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-slate-700 hover:bg-slate-50 "
                 onClick={() => {
                   editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run();
                   setShowTableMenu(false);
@@ -308,21 +308,21 @@ export function RichTextEditor({
                 <>
                   <button
                     type="button"
-                    className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-slate-700 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10"
+                    className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-slate-700 hover:bg-slate-50 "
                     onClick={() => editor.chain().focus().addRowAfter().run()}
                   >
                     <Rows3 size={14} /> Add row
                   </button>
                   <button
                     type="button"
-                    className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-slate-700 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10"
+                    className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-slate-700 hover:bg-slate-50 "
                     onClick={() => editor.chain().focus().addColumnAfter().run()}
                   >
                     <Columns3 size={14} /> Add column
                   </button>
                   <button
                     type="button"
-                    className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20"
+                    className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-xs text-red-600 hover:bg-red-50"
                     onClick={() => {
                       editor.chain().focus().deleteTable().run();
                       setShowTableMenu(false);
@@ -336,10 +336,10 @@ export function RichTextEditor({
           )}
         </div>
 
-        <span className="mx-1 h-5 w-px bg-slate-200 dark:bg-white/10" aria-hidden />
+        <span className="mx-1 h-5 w-px bg-slate-200" aria-hidden />
 
         <select
-          className="rounded border border-slate-200 bg-white px-2 py-1 text-xs text-slate-600 dark:border-white/10 dark:bg-indigo-900/40 dark:text-slate-300"
+          className="rounded border border-slate-200 bg-white px-2 py-1 text-xs text-slate-600 "
           onChange={(e) => {
             const value = e.target.value;
             if (value) editor.chain().focus().setFontFamily(value).run();

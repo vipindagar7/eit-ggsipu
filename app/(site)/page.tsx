@@ -10,7 +10,7 @@ import { CollegeCard } from "@/components/college/CollegeCard";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { FAQSection } from "@/components/admin/FAQSection";
 import { InlineCounsellingCard } from "@/components/forms/InlineCounsellingCard";
-import { courseCategories } from "@/lib/data";
+
 
 export const metadata = buildMetadata({
   path: "/",
@@ -37,52 +37,49 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-indigo-50 to-paper dark:border-white/10 dark:from-indigo-900/40 dark:to-indigo-950">
-        <div className="container grid gap-10 py-16 md:grid-cols-2 md:py-24">
-          <div className="flex flex-col justify-center">
-            <span className="mb-3 inline-block w-fit rounded-full bg-brass-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brass-600 dark:bg-brass-400/10 dark:text-brass-300">
-              Free & Unbiased Guidance
-            </span>
-            <h1 className="font-display text-4xl font-semibold leading-tight text-indigo-900 dark:text-white md:text-5xl">
-              Find the right college. Talk to a counsellor who actually knows the campus.
-            </h1>
-            <p className="mt-4 max-w-md text-slate-600 dark:text-slate-300">
-              Compare colleges by course, fees, and rating, read admissions guides written by
-              our team, and get matched with a free counsellor before you decide.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild size="lg">
-                <Link href="/counselling">Get Free Counselling</Link>
-              </Button>
-              <Button asChild size="lg" variant="brass">
-                <Link href="/colleges">Compare Colleges</Link>
-              </Button>
+      <section className="relative overflow-hidden border-b border-slate-200">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-bg.webp')" }}
+        />
+
+        {/* Optional Overlay */}
+        <div className="absolute inset-0 bg-indigo-950/60" />
+
+        {/* Content */}
+        <div className="relative container py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            {/* Left Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+                Admission & eCounselling Services for Session 2026
+              </h1>
+
+              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 md:text-lg">
+                Guru Gobind Singh Indraprastha University (GGSIPU) is a leading
+                university in Delhi NCR, India. We provide admission and
+                counselling services for various courses offered by the
+                university.
+              </p>
             </div>
-          </div>
-          <div className="hidden items-center justify-center md:flex">
-            <div className="grid w-full max-w-sm grid-cols-2 gap-4">
-              {courseCategories.slice(0, 4).map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/colleges?course=${c.slug}`}
-                  className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-medium text-indigo-700 shadow-sm transition hover:border-brass-400 hover:shadow-md dark:border-white/10 dark:bg-indigo-900/40 dark:text-brass-200 dark:hover:border-brass-400"
-                >
-                  {c.label}
-                </Link>
-              ))}
+
+            {/* Right Content */}
+            <div className="flex justify-center lg:justify-end">
+              <InlineCounsellingCard />
             </div>
           </div>
         </div>
       </section>
 
       {/* Trust stats */}
-      <section className="border-b border-slate-200 bg-white py-10 dark:border-white/10 dark:bg-indigo-950">
+      <section className="border-b border-slate-200 bg-white py-10 ">
         <div className="container grid grid-cols-2 gap-6 sm:grid-cols-4">
           {trustStats.map(({ label, value, icon: Icon }) => (
             <div key={label} className="flex flex-col items-center gap-2 text-center">
               <Icon className="text-brass-500" size={24} />
-              <p className="font-display text-2xl font-semibold text-indigo-900 dark:text-white">{value}</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">{label}</p>
+              <p className="font-display text-2xl font-semibold text-indigo-900">{value}</p>
+              <p className="text-xs text-slate-500 ">{label}</p>
             </div>
           ))}
         </div>
@@ -91,10 +88,10 @@ export default async function HomePage() {
       {/* Featured colleges */}
       <section className="container py-16">
         <div className="mb-8 flex items-end justify-between">
-          <h2 className="font-display text-2xl font-semibold text-indigo-900 dark:text-white md:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-indigo-900 ">
             Top Ranked Colleges
           </h2>
-          <Link href="/colleges" className="text-sm font-medium text-brass-600 hover:underline dark:text-brass-300">
+          <Link href="/colleges" className="text-sm font-medium text-brass-600 hover:underline">
             View all →
           </Link>
         </div>
@@ -103,14 +100,14 @@ export default async function HomePage() {
             <CollegeCard key={college._id} college={college} />
           ))}
           {featuredColleges.length === 0 && (
-            <p className="text-slate-500 dark:text-slate-400">Colleges added by the admin will appear here.</p>
+            <p className="text-slate-500 ">Colleges added by the admin will appear here.</p>
           )}
         </div>
       </section>
 
       {/* Inline counselling form — toggled from /admin/settings */}
       {settings.showCounsellingWidgetOnHome && (
-        <section className="border-y border-slate-200 bg-indigo-50/40 py-16 dark:border-white/10 dark:bg-indigo-900/20">
+        <section className="border-y border-slate-200 bg-indigo-50/40 py-16">
           <div className="container max-w-2xl">
             <InlineCounsellingCard
               title="Not sure where to start?"
@@ -124,10 +121,10 @@ export default async function HomePage() {
       <section className="py-16">
         <div className="container">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-2xl font-semibold text-indigo-900 dark:text-white md:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-indigo-900  md:text-3xl">
               Latest From The Blog
             </h2>
-            <Link href="/blog" className="text-sm font-medium text-brass-600 hover:underline dark:text-brass-300">
+            <Link href="/blog" className="text-sm font-medium text-brass-600 hover:underline">
               View all →
             </Link>
           </div>
@@ -136,12 +133,12 @@ export default async function HomePage() {
               <BlogCard key={blog._id} blog={blog} />
             ))}
             {latestBlogs.length === 0 && (
-              <p className="text-slate-500 dark:text-slate-400">Published articles will appear here.</p>
+              <p className="text-slate-500 ">Published articles will appear here.</p>
             )}
           </div>
         </div>
 
-         <FAQSection />
+        <FAQSection />
       </section>
     </>
   );

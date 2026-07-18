@@ -1,3 +1,4 @@
+import { Ribbon } from "@/components/site/Ribbon";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingContactBar } from "@/components/site/FloatingContactBar";
@@ -13,6 +14,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
           {settings.announcementText}
         </div>
       )}
+      <Ribbon phone={settings.contactPhone} />
       <Header phone={settings.contactPhone} />
       <main id="main-content" className="pb-16 sm:pb-0">
         {children}

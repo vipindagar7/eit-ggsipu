@@ -51,29 +51,21 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
 
       <div className="flex items-start gap-4">
         {college.logo && (
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-slate-200 ">
             <Image
               src={college.logo}
               alt={`${college.name} logo`}
               fill
-              className={college.logoDark ? "object-cover dark:hidden" : "object-cover"}
+              className= "object-cover"
             />
-            {college.logoDark && (
-              <Image
-                src={college.logoDark}
-                alt={`${college.name} logo`}
-                fill
-                className="hidden object-cover dark:block"
-              />
-            )}
           </div>
         )}
-        <h1 className="font-display text-3xl font-semibold text-indigo-900 dark:text-white">
+        <h1 className="font-display text-3xl font-semibold text-indigo-900 ">
           {college.name}
         </h1>
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-300">
+      <div className="mt-3 flex flex-wrap gap-4 text-sm text-slate-600">
         <span className="flex items-center gap-1">
           <MapPin size={16} /> {college.city}, {college.state}
         </span>
@@ -83,7 +75,7 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
           </span>
         )}
         {college.rating ? (
-          <span className="flex items-center gap-1 font-medium text-slate-800 dark:text-slate-100">
+          <span className="flex items-center gap-1 font-medium text-slate-800 ">
             <Star size={16} className="fill-brass-400 text-brass-400" /> {college.rating.toFixed(1)} / 5
           </span>
         ) : null}
@@ -92,8 +84,8 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       {college.highlights?.length > 0 && (
         <ul className="mt-6 grid gap-2 sm:grid-cols-2">
           {college.highlights.map((h: string, i: number) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-              <BadgeCheck size={16} className="mt-0.5 shrink-0 text-brass-600 dark:text-brass-400" /> {h}
+            <li key={i} className="flex items-start gap-2 text-sm text-slate-700 ">
+              <BadgeCheck size={16} className="mt-0.5 shrink-0 text-brass-600 " /> {h}
             </li>
           ))}
         </ul>
@@ -102,13 +94,13 @@ export default async function CollegeDetailPage({ params }: { params: Promise<{ 
       <div className="prose-blog mt-8" dangerouslySetInnerHTML={{ __html: college.description }} />
 
       {college.feesRange && (
-        <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
-          <strong className="text-ink dark:text-white">Fees range:</strong> {college.feesRange}
+        <p className="mt-4 text-sm text-slate-600 ">
+          <strong className="text-ink ">Fees range:</strong> {college.feesRange}
         </p>
       )}
       {college.approvedBy && (
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-          <strong className="text-ink dark:text-white">Approved by:</strong> {college.approvedBy}
+        <p className="mt-1 text-sm text-slate-600 ">
+          <strong className="text-ink ">Approved by:</strong> {college.approvedBy}
         </p>
       )}
 

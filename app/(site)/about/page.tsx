@@ -10,7 +10,7 @@ export const metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <div className="container max-w-2xl py-12">
-      <h1 className="font-display text-3xl font-semibold text-indigo-900 dark:text-white">About Us</h1>
+      <h1 className="font-display text-3xl font-semibold text-indigo-900">About Us</h1>
       <div className="prose-blog mt-6">
         <p>
           Welcome to {siteConfig.name}. {siteConfig.description}

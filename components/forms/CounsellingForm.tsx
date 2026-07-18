@@ -86,7 +86,7 @@ export function CounsellingForm() {
         <Label htmlFor="interestedIn">Interested in</Label>
         <select
           id="interestedIn"
-          className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-400 dark:border-white/10 dark:bg-indigo-900/40 dark:text-white"
+          className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-400"
           {...register("interestedIn")}
           defaultValue=""
         >

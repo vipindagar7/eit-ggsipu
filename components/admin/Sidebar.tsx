@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { LayoutDashboard, Newspaper, Building2, Users, Image as ImageIcon, Settings as SettingsIcon, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/site/ThemeToggle";
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -22,7 +22,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-screen w-60 shrink-0 flex-col border-r border-slate-200 bg-indigo-900 text-slate-200 dark:border-white/10">
+    <aside className="flex h-screen w-60 shrink-0 flex-col border-r border-slate-200 bg-indigo-900 text-slate-200">
       <div className="p-5">
         <span className="font-display text-lg font-semibold text-white">Admin Panel</span>
       </div>
@@ -52,7 +52,6 @@ export function Sidebar() {
 
       <div className="m-3 flex items-center justify-between rounded-md px-3 py-1">
         <span className="text-xs font-medium uppercase tracking-wide text-slate-400">Theme</span>
-        <ThemeToggle className="flex h-8 w-8 items-center justify-center rounded-md text-slate-300 hover:bg-white/10" />
       </div>
 
       <Button

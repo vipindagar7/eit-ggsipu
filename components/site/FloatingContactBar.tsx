@@ -16,12 +16,12 @@ export function FloatingContactBar({
   return (
     <>
       {/* Mobile: fixed bottom bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-slate-200 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.06)] dark:border-white/10 dark:bg-indigo-950 sm:hidden">
-        <a href={telHref} className="flex flex-1 items-center justify-center gap-2 border-r border-slate-200 py-3 text-sm font-medium text-indigo-700 dark:border-white/10 dark:text-brass-300">
+      <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-slate-200 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.06)] sm:hidden">
+        <a href={telHref} className="flex flex-1 items-center justify-center gap-2 border-r border-slate-200 py-3 text-sm font-medium text-indigo-700">
           <Phone size={16} /> Call
         </a>
         {waHref && (
-          <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex flex-1 items-center justify-center gap-2 border-r border-slate-200 py-3 text-sm font-medium text-green-600 dark:border-white/10">
+          <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex flex-1 items-center justify-center gap-2 border-r border-slate-200 py-3 text-sm font-medium text-green-600">
             <MessageCircle size={16} /> WhatsApp
           </a>
         )}

@@ -12,10 +12,10 @@ const lastUpdated = "July 2026";
 export default function TermsPage() {
   return (
     <div className="container max-w-2xl py-12">
-      <h1 className="font-display text-3xl font-semibold text-indigo-900 dark:text-white">
+      <h1 className="font-display text-3xl font-semibold text-indigo-900 ">
         Terms of Service
       </h1>
-      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Last updated: {lastUpdated}</p>
+      <p className="mt-2 text-sm text-slate-500 ">Last updated: {lastUpdated}</p>
 
       <div className="prose-blog mt-8">
         <p>

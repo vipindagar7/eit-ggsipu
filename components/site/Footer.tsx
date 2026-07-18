@@ -1,22 +1,21 @@
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { siteConfig, footerLinks } from "@/lib/data";
+import Image from "next/image";
 
 export function Footer({ phone, email }: { phone?: string; email?: string }) {
   return (
-    <footer className="mt-24 border-t border-slate-200 bg-indigo-900 text-slate-200 dark:border-white/10">
+    <footer className="mt-24 border-t border-slate-200  text-slate-200">
       <div className="container grid gap-10 py-12 md:grid-cols-4">
         <div>
-          <h3 className="font-display text-lg font-semibold text-white">{siteConfig.shortName}</h3>
-          <p className="mt-3 text-sm text-slate-300">{siteConfig.description}</p>
+        <Image src={siteConfig.logo.light} alt={siteConfig.shortName} width={128} height={48} priority/>
         </div>
-
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-brass-400">Explore</h4>
           <ul className="mt-3 space-y-2">
             {footerLinks.explore.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm text-slate-300 hover:text-white">
+                <Link href={l.href} className="text-sm text-slate-500 hover:text-brass-400">
                   {l.label}
                 </Link>
               </li>
@@ -29,7 +28,7 @@ export function Footer({ phone, email }: { phone?: string; email?: string }) {
           <ul className="mt-3 space-y-2">
             {footerLinks.company.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm text-slate-300 hover:text-white">
+                <Link href={l.href} className="text-sm text-slate-500 hover:text-brass-400">
                   {l.label}
                 </Link>
               </li>
@@ -39,10 +38,7 @@ export function Footer({ phone, email }: { phone?: string; email?: string }) {
 
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-brass-400">Contact</h4>
-          <ul className="mt-3 space-y-2 text-sm text-slate-300">
-            <li className="flex items-start gap-2">
-              <MapPin size={16} className="mt-0.5 shrink-0" /> {siteConfig.contact.address}
-            </li>
+          <ul className="mt-3 space-y-2 text-sm text-slate-500">
             <li className="flex items-center gap-2">
               <Phone size={16} /> {phone || siteConfig.contact.phone}
             </li>
@@ -54,9 +50,6 @@ export function Footer({ phone, email }: { phone?: string; email?: string }) {
       </div>
 
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-slate-400">
-        <p>
-          © {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
-        </p>
         <p className="mt-1">
           This is an independent college guidance and counselling platform. It is not the
           official website of Guru Gobind Singh Indraprastha University and is not affiliated

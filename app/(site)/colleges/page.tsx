@@ -30,10 +30,10 @@ export default async function CollegesPage({
 
   return (
     <div className="container py-12">
-      <h1 className="font-display text-3xl font-semibold text-indigo-900 dark:text-white">
+      <h1 className="font-display text-3xl font-semibold text-indigo-900">
         Compare Colleges
       </h1>
-      <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+      <p className="mt-2 max-w-2xl text-slate-600 ">
         Ranked and reviewed by our academic counselling team — updated regularly.
       </p>
 
@@ -44,7 +44,7 @@ export default async function CollegesPage({
             "rounded-full border px-3 py-1.5 text-sm",
             !course
               ? "border-indigo-700 bg-indigo-700 text-white"
-              : "border-slate-200 text-slate-600 hover:border-indigo-400 dark:border-white/10 dark:text-slate-300"
+              : "border-slate-200 text-slate-600 hover:border-indigo-400 "
           )}
         >
           All
@@ -57,7 +57,7 @@ export default async function CollegesPage({
               "rounded-full border px-3 py-1.5 text-sm",
               course === c.slug
                 ? "border-indigo-700 bg-indigo-700 text-white"
-                : "border-slate-200 text-slate-600 hover:border-indigo-400 dark:border-white/10 dark:text-slate-300"
+                : "border-slate-200 text-slate-600 hover:border-indigo-400 "
             )}
           >
             {c.label}
@@ -70,7 +70,7 @@ export default async function CollegesPage({
           <CollegeCard key={college._id} college={college} />
         ))}
         {colleges.length === 0 && (
-          <p className="text-slate-500 dark:text-slate-400">No colleges found for this filter yet.</p>
+          <p className="text-slate-500">No colleges found for this filter yet.</p>
         )}
       </div>
     </div>

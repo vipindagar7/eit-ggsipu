@@ -9,13 +9,13 @@
  */
 
 export const siteConfig = {
-  name: "IPU ADMISSION GUIDANCE",
-  shortName: "IPU",
-  legalName: "IPU ADMISSION GUIDANCE",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com",
+  name: "ggsipu.co.in",
+  shortName: "ggsipu.co.in",
+  legalName: "ggsipu.co.in",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://ggsipu.co.in",
   logo: {
-    light: "/logo-dark.svg", // shown on light backgrounds
-    dark: "/logo-light.svg", // shown on dark backgrounds / dark mode
+    light: "/logo-dark.png", // shown on light backgrounds
+    dark: "/logo-light.png", // shown on dark backgrounds / dark mode
   },
   ogImage: "/og-default.jpg",
   description:
