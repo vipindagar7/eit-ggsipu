@@ -30,12 +30,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
-<meta name="google-site-verification" content="dyATiu3im3hnQpTzTgEKMWpzkvn_SMQnXvsO5249sEY" />
         <script
           nonce={nonce}
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
+<meta name="google-site-verification" content="dyATiu3im3hnQpTzTgEKMWpzkvn_SMQnXvsO5249sEY" />
+
       </head>
       <body className="font-body bg-paper text-ink antialiased transition-colors ">
         <a
