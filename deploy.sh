@@ -9,7 +9,7 @@ echo "========================================"
 echo ""
 echo "📥 Pulling latest code..."
 echo ""
-cd /home/eit-ipuniversity
+cd /var/www/eit-ggsipu
 git pull origin main
 
 # ───────────────── DEPENDENCIES ─────────────────
@@ -28,7 +28,7 @@ npm run build
 echo ""
 echo "♻️  Restarting app..."
 echo ""
-pm2 restart eit-ipuniversity
+pm2 restart eit-ggsipu
 
 # ───────────────── NGINX ─────────────────
 echo ""

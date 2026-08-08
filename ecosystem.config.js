@@ -11,7 +11,7 @@
 module.exports = {
   apps: [
     {
-      name: "IPU-ggsipu",
+      name: "eit-ggsipu",
       script: "node_modules/next/dist/bin/next",
       args: "start -p 3010",
       cwd: __dirname,
